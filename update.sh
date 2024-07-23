@@ -33,5 +33,10 @@ for FILE in /mnt/mmc/MUOS/theme/*.zip; do
   fi
 
   echo "Updating ${THEME_NAME} to latest version..."
-  curl -o "/mnt/mmc/MUOS/theme/${FILE}" "https://github.com/MustardOS/theme/releases/latest/download/${FILE}"
+  curl -o "/tmp/${FILE}" "https://github.com/MustardOS/theme/releases/latest/download/${FILE}"
+
+  echo "Running extract script on newly downloaded theme..."
+  ./mnt/mmc/MUOS/script/mux/extract.sh "/tmp/${FILE}"
+
+  rm "/tmp/${FILE}"
 done
