@@ -32,8 +32,8 @@ for FILE in /mnt/mmc/MUOS/theme/*.zip; do
     continue
   fi
 
-  # todo: clone subdir of git repo for our theme
-  # todo: make that subdir into a zip
-  # todo: copy that zip into /mnt/mmc/MUOS/theme
+  echo "Updating ${THEME_NAME} to latest version..."
+  curl -o "/mnt/mmc/MUOS/theme/${FILE}" "https://github.com/MustardOS/theme/releases/latest/download/${FILE}"
+
   # todo: run theme install (how?)
 done
