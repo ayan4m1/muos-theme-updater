@@ -34,6 +34,4 @@ for FILE in /mnt/mmc/MUOS/theme/*.zip; do
 
   echo "Updating ${THEME_NAME} to latest version..."
   curl -o "/mnt/mmc/MUOS/theme/${FILE}" "https://github.com/MustardOS/theme/releases/latest/download/${FILE}"
-
-  # todo: run theme install (how?)
 done
